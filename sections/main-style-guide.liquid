@@ -1,0 +1,79 @@
+{{ 'section-main-page.css' | asset_url | stylesheet_tag }}
+
+<style>
+
+.colors {
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-top:30px;
+  margin-bottom:50px;
+}
+.color {
+  width: 20%;
+  height: 150px;
+  display:block!important;
+  padding:10px;
+  color: #fff;
+}
+
+.typography {
+  margin-top:30px;
+  margin-bottom:50px;
+}
+</style>
+
+<div class="page o-container -medium">
+  {% if page.title == blank %}
+    <h1 style="margin-bottom:50px;">Style Guide</h1>
+  {% else %}
+    <h1>{{ page.title }}</h1>
+  {% endif %}
+
+  <h2>Colors</h2>
+  <div class="colors">
+    <div class="color primary-color" style="background-color:{{ settings.colors_primary_color }};display:block!important;">
+      <p>{{ settings.colors_primary_color }}</p>
+    </div>
+    <div class="color secondary-color" style="background-color: {{ settings.colors_secondary_color }};display:block!important;">
+      <p>{{ settings.colors_secondary_color }}</p>
+    </div>
+    <div class="color solid-button" style="background-color: {{ settings.colors_solid_button }};display:block!important;">
+      <p>{{ settings.colors_solid_button }}</p>
+    </div>
+    <div class="color text-color" style="background-color: {{ settings.colors_text }};display:block!important;">
+      <p>{{ settings.colors_text }}</p>
+    </div>
+    <div class="color outline-button-color" style="background-color: {{ settings.colors_outline_button }};display:block!important;">
+      <p>{{ settings.colors_outline_button }}</p>
+    </div>
+    <div class="color background-primary-color" style="background-color: {{ settings.colors_background_primary }};display:block!important;">
+      <p>{{ settings.colors_background_primary }}</p>
+    </div>
+    <div class="color background-secondary-color" style="background-color: {{ settings.colors_background_secondary }};display:block!important;">
+      <p>{{ settings.colors_background_secondary }}</p>
+    </div>
+  </div>
+
+  <h2>Typography</h2>
+  <div class="typography">
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6><br>
+    <p><strong>Firstborn</strong> is a theme development project different. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla a vero sint dolore, ut itaque velit dicta adipisci quibusdam impedit eveniet dignissimos totam officia dolor sed eum eos laudantium recusandae?</p>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.page.name",
+  "tag": "section",
+  "settings": []
+}
+{% endschema %}
